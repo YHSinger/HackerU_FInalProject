@@ -1,0 +1,78 @@
+@local=http://localhost:3900/api 
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDI5YmEyYjc4YmI0ZGM1MDMyNTk2MjYiLCJuYW1lIjoiYml6MiIsInJvbGVzIjpbInVzZXIiLCJidXNpbmVzcyJdLCJpYXQiOjE2ODE4NDczNTQsImV4cCI6MTY4MjAyMDE1NH0.WiG7JBCfMqilpbDb9I9Jpfczebt0kxHozQjhiOvGkbQ
+POST {{local}}/users/register
+Content-Type: application/json
+
+{
+  "name": "cus",
+  "email": "cust@gmail.com",
+  "password": "123456",
+  "roles": ["user", "business"]
+}
+
+###
+
+POST {{local}}/users/login
+Content-Type: application/json
+
+{
+   "email": "biz2@gmail.com",
+  "password": "123456"
+}
+
+###
+
+POST {{local}}/cards/new
+Content-Type: application/json
+x-auth-token: {{token}}
+
+{
+  "bizName": "biz 5 test",
+  "bizDescription": "We sell books",
+  "bizAddress": "123 main st",
+  "bizPhone": "0509939100"
+}
+
+###
+PUT {{local}}/cards/edit/6410563106483412317b5b66
+Content-Type: application/json
+x-auth-token: {{token}}
+
+{
+  "bizName": "changedbizname",
+  "bizDescription": "We sell books",
+  "bizAddress": "123 main st",
+  "bizPhone": "0509939100"
+}
+
+###
+GET {{local}}/cards/displayAll
+x-auth-token: {{token}}
+
+###
+GET {{local}}/cards/display-id/6410563106483412317b5b66
+x-auth-token: {{token}}
+
+###
+DELETE {{local}}/cards/delete/6410563106483412317b5b66
+x-auth-token: {{token}}
+
+###
+POST {{local}}/users/add-to-favorites/6410563106483412317b5b66
+x-auth-token: {{token}}
+
+###
+GET {{local}}/users/display-favorites
+x-auth-token: {{token}}
+
+###
+DELETE {{local}}/users/remove-favorites/6410563106483412317b5b66
+x-auth-token: {{token}}
+
+###
+GET {{local}}/users/user-profile/641055fd06483412317b5b60
+
+###
+
+GET {{local}}/cards/owncards
+x-auth-token: {{token}}

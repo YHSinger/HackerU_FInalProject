@@ -1,0 +1,100 @@
+{
+  "cards": [
+    {
+      "_id": "1",
+      "name": "Card name 1",
+      "description": "This is a card description 1",
+      "img": "business-1.jpg"
+    },
+    {
+      "_id": "2",
+      "name": "Card name 2",
+      "description": "This is a card description 2",
+      "img": "business-1.jpg"
+    },
+    {
+      "_id": "3",
+      "name": "Card name 3",
+      "description": "This is a card description 3",
+      "img": "business-1.jpg"
+    },
+    {
+      "_id": "4",
+      "name": "Card name 4",
+      "description": "This is a card description 4",
+      "img": "business-1.jpg"
+    },
+    {
+      "_id": "5",
+      "name": "Card name 5",
+      "description": "This is a card description 5",
+      "img": "business-1.jpg"
+    },
+    {
+      "_id": "6",
+      "name": "Card name 6",
+      "description": "This is a card description 6",
+      "img": "business-1.jpg"
+    },
+    {
+      "_id": "7",
+      "name": "Card name 7",
+      "description": "This is a card description 7",
+      "img": "business-1.jpg"
+    },
+    {
+      "_id": "8",
+      "name": "Card name 8",
+      "description": "This is a card description 8",
+      "img": "business-1.jpg"
+    },
+    {
+      "_id": "9",
+      "name": "Card name 9",
+      "description": "This is a card description 9",
+      "img": "business-1.jpg"
+    },
+    {
+      "_id": "10",
+      "name": "Card name 10",
+      "description": "This is a card description 10",
+      "img": "business-1.jpg"
+    },
+    {
+      "_id": "11",
+      "name": "Card name 11",
+      "description": "This is a card description 11",
+      "img": "business-1.jpg"
+    },
+    {
+      "_id": "12",
+      "name": "Card name 12",
+      "description": "This is a card description 12",
+      "img": "business-1.jpg"
+    },
+    {
+      "_id": "13",
+      "name": "Card name 13",
+      "description": "This is a card description 13",
+      "img": "business-1.jpg"
+    },
+    {
+      "_id": "14",
+      "name": "Card name 14",
+      "description": "This is a card description 14",
+      "img": "business-1.jpg"
+    },
+    {
+      "_id": "15",
+      "name": "Card name 15",
+      "description": "This is a card description 15",
+      "img": "business-1.jpg"
+    },
+    {
+      "_id": "16",
+      "name": "Card name 16",
+      "description": "This is a card description 16",
+      "img": "business-1.jpg"
+    }
+  ]
+}
