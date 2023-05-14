@@ -5,9 +5,12 @@ import useBusiness from "../../hooks/useBusiness";
 import ConfirmDelete from "../ConfirmDelete/ConfirmDelete";
 
 const TableList = (props) => {
-  const { openConfirmDelete } = useBusiness();
+  const { openConfirmDelete, cardCredentials } = useBusiness();
 
-  const handleUpdate = (card) => console.log(card, "  Update works");
+  const handleUpdate = (card) => {
+    cardCredentials(card);
+    props.openFormModal();
+  };
 
   const handleDelete = (cardId) => openConfirmDelete(cardId);
 

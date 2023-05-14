@@ -1,8 +1,6 @@
-import { useState } from "react";
-import userService from "../services/user";
+import { useContext } from "react";
+import { userContext } from "../context/UserProvider";
 
-const useUser = () => {
-  const [user, setUser] = useState(userService.getCurrentUser());
-  return [user, setUser];
-};
+export const useUser = () => useContext(userContext);
+
 export default useUser;

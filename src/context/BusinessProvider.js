@@ -2,8 +2,8 @@ import React, { useState, useEffect, createContext, Fragment } from "react";
 import {
   readAllCards,
   readownercards,
-  createownercards,
-  editCard,
+  createCard,
+  updateCard,
   deleteCard,
 } from "../services/cards";
 import useCards from "../hooks/useCards";
@@ -12,7 +12,7 @@ import useConfirmDelete from "../Components/ConfirmDelete/useConfirmDelete";
 export const BizContext = createContext();
 
 const BizProvider = ({ children }) => {
-  const [card, setCard] = useState(null);
+  const [editCard, setEditCard] = useState(null);
   /* Busniess ownner cards */
   const [ownCards, setOwnCards] = useState(null);
   const [rendered, setRendered] = useState(false);
@@ -32,7 +32,7 @@ const BizProvider = ({ children }) => {
 
   const create = async (credentials) => {
     //  API create new card
-    await createownercards(credentials);
+    await createCard(credentials);
     //rendering operations in frot end app
     //1. update card provider
     handleChange();
@@ -43,11 +43,15 @@ const BizProvider = ({ children }) => {
 
   const update = async (credentials) => {
     //API update operation
-    await editCard(credentials);
+    await updateCard(credentials);
     // handle two phases of rendereing: first for the global cards provider, and second for the owner cards.
     handleChange();
     setRendered((prev) => !prev);
   };
+
+  const cardCredentials = (data) => setEditCard(data);
+
+  const clearFields = () => setEditCard(null);
 
   const remove = async () => {
     await deleteCard(itemId);
@@ -56,7 +60,7 @@ const BizProvider = ({ children }) => {
     closeConfirmDelete();
   };
 
-  console.log(ownCards);
+  console.log(editCard);
   return (
     <BizContext.Provider
       value={{
@@ -68,6 +72,9 @@ const BizProvider = ({ children }) => {
         openConfirmDelete,
         closeConfirmDelete,
         itemId,
+        cardCredentials,
+        editCard,
+        clearFields,
       }}
     >
       <Fragment>{children}</Fragment>

@@ -12,6 +12,7 @@ import Favorites from "../Pages/Favorites";
 import Profile from "../Pages/Profile";
 import GuestRoutes from "../Auth/GuestRoutes";
 import BizProvider from "../context/BusinessProvider";
+import CreateCard from "../Components/Cards/CreateCard";
 
 const Dashboard = React.lazy(() => import("../Pages/Dashboard"));
 

@@ -39,6 +39,15 @@ const getCurrentUser = () => {
   }
 };
 
+export const addToFavorites = (id) =>
+  httpService.get(`http://localhost:3900/api/users/add-to-favorites/${id}`);
+
+export const removeFromFavorites = (id) =>
+  httpService.get(`http://localhost:3900/api/users/remove-favorites/${id}`);
+
+export const displayFavorites = (id) =>
+  httpService.get(`http://localhost:3900/api/users/display-favorites`);
+
 const user = { signup, signin, getCurrentUser, logOut };
 
 export default user;
