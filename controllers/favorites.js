@@ -11,7 +11,9 @@ export const addToFavorites = async (req, res, next) => {
       { new: true }
     );
     res.send(update);
-  } catch (error) {}
+  } catch (error) {
+    res.status(400).send(error);
+  }
 };
 
 export const displayFavorites = async (req, res, next) => {

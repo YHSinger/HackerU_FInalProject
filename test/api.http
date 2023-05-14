@@ -1,5 +1,5 @@
 @local=http://localhost:3900/api 
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDI5YmEyYjc4YmI0ZGM1MDMyNTk2MjYiLCJuYW1lIjoiYml6MiIsInJvbGVzIjpbInVzZXIiLCJidXNpbmVzcyJdLCJpYXQiOjE2ODE4NDczNTQsImV4cCI6MTY4MjAyMDE1NH0.WiG7JBCfMqilpbDb9I9Jpfczebt0kxHozQjhiOvGkbQ
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDI5YmEyYjc4YmI0ZGM1MDMyNTk2MjYiLCJuYW1lIjoiYml6MiIsInJvbGVzIjpbInVzZXIiLCJidXNpbmVzcyJdLCJpYXQiOjE2ODI4NzY5ODYsImV4cCI6MTY4MzA0OTc4Nn0.izoQTgzMbgZWxlJW13qeOPj_XKRkGh8U6CGM1OVIvmU
 POST {{local}}/users/register
 Content-Type: application/json
 
@@ -27,7 +27,7 @@ Content-Type: application/json
 x-auth-token: {{token}}
 
 {
-  "bizName": "biz 5 test",
+  "bizName": "biz 8 test",
   "bizDescription": "We sell books",
   "bizAddress": "123 main st",
   "bizPhone": "0509939100"

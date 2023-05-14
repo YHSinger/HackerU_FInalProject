@@ -5,22 +5,26 @@ import cardsRouter from "../routes/cards.js";
 
 export const buildCard = async (req, res) => {
   const { error } = validateCard(req.body);
-  if (error)
+  if (error) {
     return res
       .status(400)
       .json({ message: error.details.map((d) => d.message) });
+  }
+  try {
+    let card = new Card({
+      bizNumber: await generateBizNumber(),
+      user_id: req.user._id,
+      ...req.body,
+    });
 
-  let card = new Card({
-    bizNumber: await generateBizNumber(),
-    user_id: req.user._id,
-    ...req.body,
-  });
-
-  card.bizImage =
-    card.bizImage ??
-    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
-  card = await card.save();
-  res.json(card);
+    card.bizImage =
+      card.bizImage ??
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
+    card = await card.save();
+    res.json(card);
+  } catch (error) {
+    res.status(400).send(error);
+  }
 };
 
 export const editCard = async (req, res, next) => {

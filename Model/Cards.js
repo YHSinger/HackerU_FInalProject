@@ -30,7 +30,7 @@ const cardSchema = new mongoose.Schema({
   bizImage: {
     type: String,
     required: true,
-    minlength: 12,
+    minlength: 2,
     maxlength: 1024,
   },
   bizNumber: {
